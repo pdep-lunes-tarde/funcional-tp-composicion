@@ -1,56 +1,63 @@
 module Library where
 import PdePreludat
 
-data Animal = Animal {
-    energia :: Number,
-    tipo :: Tipo,
-    peso :: Number
-} deriving(Show, Eq)
+data Ingrediente =
+    Carne | Pan | Panceta | Cheddar | Pollo | Curry | QuesoDeAlmendras
+    deriving (Eq, Show)
 
-data Tipo = Volador | Terrestre | Acuatico deriving(Show, Eq)
+precioIngrediente Carne = 20
+precioIngrediente Pan = 2
+precioIngrediente Panceta = 10
+precioIngrediente Cheddar = 10
+precioIngrediente Pollo =  10
+precioIngrediente Curry = 5
+precioIngrediente QuesoDeAlmendras = 15
 
--- Parte 1: Animales
+data Hamburguesa = Hamburguesa {
+    precioBase :: Number,
+    ingredientes :: [Ingrediente]
+} deriving (Eq, Show)
 
-losDeTipo = implementame
+precio :: Hamburguesa -> Number
+precio hamburguesa = precioBase hamburguesa + precioTotal (ingredientes hamburguesa)
 
-animalesHambrientos = implementame
+precioTotal :: [Ingrediente] -> Number
+-- precioTotal ingredientes = sum (map precioIngrediente ingredientes)
+precioTotal ingredientes = (sum . map precioIngrediente) ingredientes -- esta bien
+-- precioTotal ingredientes = sum . map precioIngrediente $ ingredientes -- esta bien
+-- haskell lo va a interpretar como:
+-- (sum . map precioIngrediente) $ ingredientes
 
--- Parte 2: Alimentos y entrenamientos
+-- precioTotal ingredientes = sum . map precioIngrediente ingredientes -- esta mal
+-- haskell lo va a interpretar como
+-- sum . (map precioIngrediente ingredientes) 
 
--- implementar estos alimentos:
--- bayas aumenta la energia en 5 y el peso en 0.1
--- carne aumenta la energia en 20 y el peso en 2
+agrandar :: Hamburguesa -> Hamburguesa
+agrandar hamburguesa = agregarIngrediente (tipoDePati hamburguesa) hamburguesa
 
-entrenar = implementame
+agregarIngrediente :: Ingrediente -> Hamburguesa -> Hamburguesa
+agregarIngrediente ingrediente hamburguesa =
+    Hamburguesa (precioBase hamburguesa) (ingrediente : ingredientes hamburguesa)
 
-alimentarATodos = implementame
+tipoDePati hamburguesa = primeroQueSeaTipoDePati (ingredientes hamburguesa)
 
-aplicarItinerario = implementame
+esTipoDePati ingrediente = ingrediente == Pollo || ingrediente == Carne
 
--- Parte 3: Nuestras propias funciones de orden superior
+primeroQueSeaTipoDePati ingredientes = head (filter esTipoDePati ingredientes)
 
-mapTupla = implementame
+descuento :: Number -> Hamburguesa -> Hamburguesa
+descuento porcentaje hamburguesa =
+    Hamburguesa (precioBase hamburguesa - precioBase hamburguesa * (porcentaje / 100))
+                (ingredientes hamburguesa)
 
-menorSegun = implementame
+-- cuartoDeLibra es una hamburguesa de pan, carne, cheddar, pan y el precio base es de 20.
 
-minimoSegun = implementame
+cuartoDeLibra :: Hamburguesa
+cuartoDeLibra = Hamburguesa 20 [Pan, Carne, Cheddar, Pan]
 
-aplicarVeces = implementame
+-- la pdepBurguer que es un cuarto de libra agrandado 2 veces con panceta, cheddar y 20% de descuento. Su precio final deberia ser 110
+pdepBurger :: Hamburguesa
+pdepBurger =
+    (descuento 20 . agregarIngrediente Cheddar . agregarIngrediente Panceta . agrandar . agrandar) cuartoDeLibra
 
-replicar = implementame
-
--- Parte 4. Bonus: combinando funciones
-
-valor |> funcion = implementame
-
-esVocal = implementame
-
-saltoDeLinea :: Char
-saltoDeLinea = '\n'
-
-primeraLinea = implementame
-
-lasVocales = implementame
-
--- definir usando |> para combinar las funciones
-contarVocalesDeLaPrimeraLinea = implementame
+-- pdepBurger = descuento 20 (agregarIngrediente Cheddar (agregarIngrediente Panceta (agrandar (agrandar cuartoDeLibra))))

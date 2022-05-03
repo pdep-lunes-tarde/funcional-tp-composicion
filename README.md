@@ -64,13 +64,13 @@ Nos pusimos una hamburguesería y queremos implementar un sistema para calcular 
 - Curry = 5
 - QuesoDeAlmendras = 15
  
- cuartoDeLibra = es una hamburguesa de pan, carne, cheddar, pan y el valor inicial  es de 20.
+ cuartoDeLibra = es una hamburguesa de pan, carne, cheddar, pan y el precio base  es de 20.
 
  Partiendo de esto modelamos:
  
 - **Agrandar**: cada vez que se agranda una hamburguesa se agrega otro ingrediente base (Carne | Pollo), se elige el ingrediente base a agregar según lo que ya haya en la hamburguesa (si había carne se agrega carne, si había pollo se agrega pollo, si había ambos da igual cual se agregue).
 - **AgregarIngrediente**: recibe un ingrediente y una hambrugesa lo agrega a la hamburguesa.
-- **descuento**: recibe un % de descuento, y devuelve la hamburguesa con ese descuento aplicado al valor inicial.
+- **descuento**: recibe un % de descuento, y devuelve la hamburguesa con ese descuento aplicado al precio base.
 
  la pdepBurguer que es un cuarto de libra agrandado 2 veces con panceta, cheddar y 20% de descuento. Su precio final deberia ser 110
 
