@@ -51,11 +51,14 @@ También pueden usar ghcid para correr los tests automáticamente como se explic
 ## El enunciado
 
 
-Resolver este TP  **usando composición y aplicación parcial**.
+Resolver este TP  **usando composición y aplicación parcial**. Escribir los tests que consideren necesarios para cada punto.
 
 ### Parte 1: Hamburguesas
 
 Nos pusimos una hamburguesería y queremos implementar un sistema para calcular los precios de las hamburguesas que vamos a vender. Cada hamburugesa tiene un precio base y una lista de ingredientes.
+
+El precio final de una hamburguesa es la sumatoria de los precios de los ingredientes + el precio base.
+
 - Carne = 20
 - Pan = 2
 - Panceta = 10
@@ -64,7 +67,7 @@ Nos pusimos una hamburguesería y queremos implementar un sistema para calcular 
 - Curry = 5
 - QuesoDeAlmendras = 15
  
- cuartoDeLibra = es una hamburguesa de pan, carne, cheddar, pan y el precio base  es de 20.
+ cuartoDeLibra = es una hamburguesa de pan, carne, cheddar, pan y su precio base es de 20.
 
  Partiendo de esto modelamos:
  
