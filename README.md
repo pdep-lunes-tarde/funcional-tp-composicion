@@ -9,7 +9,15 @@
 - [ ] Ejecutar los tests con `stack test` y que den verde
 - [ ] A medida que vas resolviendo el ejercicio, subir [el progreso a git](https://github.com/pdep-utn/enunciados-miercoles-noche/blob/master/pages/git/resolverConflictos.md)
 
-## Nombre y Legajo
+## Equipo
+
+- Nombre del grupo
+
+- Legajo: **Completar**
+- Nombre: **Completar**
+
+- Legajo: **Completar**
+- Nombre: **Completar**
 
 - Legajo: **Completar**
 - Nombre: **Completar**
