@@ -63,7 +63,7 @@ Las papas son un ingrediente que cuesta $10.
 ### PARTE 3: algunos cambios más 
 
 Queremos modelar los siguientes modificadores:
-- **hacerVeggie** : cambia todos los ingredientes base que hayan en la hamburguesa por PatiVegano (ingrediente base tambien de precio 10) y el cheddar lo cambia por queso de almendras.
+- **hacerVeggie** : cambia todos los ingredientes base que hayan en la hamburguesa por PatiVegano (ingrediente base tambien de precio 10), el cheddar lo cambia por queso de almendras y luego elimina cualquier ingrediente que haya quedado que sea carnívoro (por ahora son ingredientes carnívoros la Carne, el Pollo y la Panceta).
 - **cambiarPanDePati** : cambia el Pan que haya en la hamburguesa por PanIntegral (ingrediente de precio 3).
 
 - hacer el **dobleCuartoVegano** que es un dobleCuarto veggie con pan integral.
