@@ -41,32 +41,31 @@ El precio final de una hamburguesa es la sumatoria de los precios de los ingredi
 - Pollo = 10
 - Curry = 5
 - QuesoDeAlmendras = 15
+- BaconDeTofu = 12
  
- cuartoDeLibra = es una hamburguesa de pan, carne, cheddar, pan y su precio base es de 20.
+Un ejemplo de hamburguesa es el **cuartoDeLibra**, una hamburguesa de pan, carne, cheddar, pan y su precio base es de 20.
 
  Partiendo de esto modelamos:
  
-- **Agrandar**: cada vez que se agranda una hamburguesa se agrega otro ingrediente base (Carne | Pollo), se elige el ingrediente base a agregar según lo que ya haya en la hamburguesa (si había carne se agrega carne, si había pollo se agrega pollo, si había ambos da igual cual se agregue).
-- **AgregarIngrediente**: recibe un ingrediente y una hambrugesa lo agrega a la hamburguesa.
+- **agrandar**: cada vez que se agranda una hamburguesa se agrega otro ingrediente base (por ahora, son Carne o Pollo), se elige el ingrediente base a agregar según lo que ya haya en la hamburguesa (si había carne se agrega carne, si había pollo se agrega pollo, si había ambos da igual cuál se agregue).
+- **agregarIngrediente**: recibe un ingrediente y una hambrugesa lo agrega a la hamburguesa.
 - **descuento**: recibe un % de descuento, y devuelve la hamburguesa con ese descuento aplicado al precio base.
-
- la pdepBurguer que es un cuarto de libra agrandado 2 veces con panceta, cheddar y 20% de descuento. Su precio final deberia ser 110
+- la **pdepBurger**, que es un cuarto de libra agrandado 2 veces con panceta, cheddar y 20% de descuento. Su precio final deberia ser 110.
 
 ### PARTE 2: Algunas hamburguesas más
-El negocio se agrando y queremos agregar las siguientes hamburguesas:
+El negocio se agrandó y queremos agregar las siguientes hamburguesas:
 - **dobleCuarto** = es un cuarto de libra con carne y cheddar. El precio final deberia ser 84.
-- **bigPdep** =  es un doble cuarto con curry. El precio final deberia ser 89.
-- **delDia** = es una promo que dada una hamburguesa, le agrega Papas y un descuento del 30%. Por ej, podría pedir una big pdep del dia y debería ser como una big pdep (doble cuarto con curry) pero con papas y el descuento del 30%. Por ejemplo una doble cuarto del dia deberia valer 88.
+- **bigPdep** = es un doble cuarto con curry. El precio final deberia ser 89.
+- **delDia** = es una promo que, dada una hamburguesa, le agrega Papas y un descuento del 30%. Por ejemplo, podría pedir una big pdep del dia y debería ser como una big pdep (doble cuarto con curry) pero con papas y el descuento del 30%. Por ejemplo una doble cuarto del día deberia valer 88.
 
 Las papas son un ingrediente que cuesta $10.
 
 ### PARTE 3: algunos cambios más 
 
 Queremos modelar los siguientes modificadores:
-- **hacerVeggie** : cambia todos los ingredientes base que hayan en la hamburguesa por PatiVegano (ingrediente base tambien de precio 10), el cheddar lo cambia por queso de almendras y luego elimina cualquier ingrediente que haya quedado que sea carnívoro (por ahora son ingredientes carnívoros la Carne, el Pollo y la Panceta).
+- **hacerVeggie** : cambia todos los ingredientes base que hayan en la hamburguesa por PatiVegano (nuevo ingrediente base, también de precio 10), el cheddar lo cambia por queso de almendras y la panceta por bacon de tofu.
 - **cambiarPanDePati** : cambia el Pan que haya en la hamburguesa por PanIntegral (ingrediente de precio 3).
-
-- hacer el **dobleCuartoVegano** que es un dobleCuarto veggie con pan integral.
+- hacer el **dobleCuartoVegano**, que es un dobleCuarto veggie con pan integral.
 
 
 ## Que hacer cuando terminan el TP
